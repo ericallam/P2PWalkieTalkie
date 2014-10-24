@@ -13,11 +13,10 @@
 @end
 
 @interface Multipeer : NSObject
-- (void)startAdvertising;
+- (void)findNearbyFromViewController:(UIViewController *)controller;
 
 @property (readonly) MCPeerID *localPeerID;
 @property (weak, nonatomic) id<MultipeerDelegate> delegate;
-@property (strong, nonatomic) MCSession *session;
 @end
 
 FOUNDATION_EXPORT NSString *MultipeerServiceType;

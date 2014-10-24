@@ -11,9 +11,12 @@
 
 NSString *MultipeerServiceType = @"comcmdr-wt";
 
-@interface Multipeer () <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate>
+@interface Multipeer () <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCBrowserViewControllerDelegate>
+
 @property (strong, nonatomic) MCPeerID *localPeerID;
+@property (strong, nonatomic) MCAdvertiserAssistant *advertiserAssistant;
 @property (strong, atomic) NSMutableArray *mutableBlockedPeers;
+@property (strong, nonatomic) MCSession *session;
 @end
 
 @implementation Multipeer
@@ -25,21 +28,32 @@ NSString *MultipeerServiceType = @"comcmdr-wt";
         
         _session = [[MCSession alloc] initWithPeer:_localPeerID
                                             securityIdentity:nil
-                                        encryptionPreference:MCEncryptionRequired];
+                                        encryptionPreference:MCEncryptionNone];
         _session.delegate = self;
+        
+        _advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:MultipeerServiceType discoveryInfo:nil session:_session];
+        
+        [_advertiserAssistant start];
     }
     
     return self;
 }
 
-- (void)startAdvertising
+- (void)dealloc
 {
-    MCNearbyServiceAdvertiser *advertiser =
-    [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.localPeerID
-                                      discoveryInfo:nil
-                                        serviceType:MultipeerServiceType];
-    advertiser.delegate = self;
-    [advertiser startAdvertisingPeer];
+    [_advertiserAssistant stop];
+    [_session disconnect];
+}
+
+- (void)findNearbyFromViewController:(UIViewController *)controller
+{
+    MCBrowserViewController *browserViewController =
+    [[MCBrowserViewController alloc] initWithServiceType:MultipeerServiceType session:self.session];
+    browserViewController.delegate = self;
+    
+    [controller presentViewController:browserViewController
+                       animated:YES
+                     completion:nil];
 }
 
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser
@@ -76,14 +90,67 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
     [appDel.window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
+- (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error;
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
 {
-    
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID
 {
-    
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
+
+- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)browser:(MCNearbyServiceBrowser *)browser didNotStartBrowsingForPeers:(NSError *)error
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info
+{
+    NSLog(@"Found Peer: %@, discovery: %@", peerID, info);
+}
+
+- (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
+{
+    NSLog(@"Lost Peer: %@", peerID);
+}
+
+- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController
+{
+    [browserViewController.browser stopBrowsingForPeers];
+}
+
+- (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController
+{
+    [browserViewController.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        [browserViewController.browser stopBrowsingForPeers];
+    }];
+}
+
+- (BOOL)browserViewController:(MCBrowserViewController *)browserViewController shouldPresentNearbyPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info;
+{
+    return YES;
+}
+
 
 @end

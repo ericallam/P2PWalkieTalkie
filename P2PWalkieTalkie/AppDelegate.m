@@ -7,21 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-NSString * const XXServiceType = @"comcmdr-wt";
-
-@interface AppDelegate () <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate>
+@interface AppDelegate ()
 @property (strong, atomic) NSMutableArray *mutableBlockedPeers;
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.multipeer = [Multipeer new];
-    [self.multipeer startAdvertising];
     
     return YES;
 }
