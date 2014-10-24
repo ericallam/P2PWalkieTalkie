@@ -1,0 +1,8 @@
+*.xcuserdatad
+
+*.xccheckout
+
+*.xcworkspace
+!default.xcworkspace
+
+.DS_Store
