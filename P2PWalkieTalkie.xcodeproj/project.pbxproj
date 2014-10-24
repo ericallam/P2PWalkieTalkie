@@ -16,6 +16,8 @@
 		0738477719FA64EE00AF9393 /* P2PWalkieTalkieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738477619FA64EE00AF9393 /* P2PWalkieTalkieTests.m */; };
 		0738478119FA665500AF9393 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0738478019FA665500AF9393 /* MultipeerConnectivity.framework */; };
 		0738478419FA738700AF9393 /* Multipeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738478319FA738700AF9393 /* Multipeer.m */; };
+		07D03A7019FA9C8C00F897EE /* OutputAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D03A6C19FA9C8C00F897EE /* OutputAudioStreamer.m */; };
+		07D03A7119FA9C8C00F897EE /* InputAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D03A6F19FA9C8C00F897EE /* InputAudioStreamer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,10 @@
 		0738478019FA665500AF9393 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		0738478219FA738700AF9393 /* Multipeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Multipeer.h; sourceTree = "<group>"; };
 		0738478319FA738700AF9393 /* Multipeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Multipeer.m; sourceTree = "<group>"; };
+		07D03A6C19FA9C8C00F897EE /* OutputAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputAudioStreamer.m; sourceTree = "<group>"; };
+		07D03A6D19FA9C8C00F897EE /* OutputAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputAudioStreamer.h; sourceTree = "<group>"; };
+		07D03A6E19FA9C8C00F897EE /* InputAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputAudioStreamer.h; sourceTree = "<group>"; };
+		07D03A6F19FA9C8C00F897EE /* InputAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputAudioStreamer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 		0738475919FA64EE00AF9393 /* P2PWalkieTalkie */ = {
 			isa = PBXGroup;
 			children = (
+				07D03A6C19FA9C8C00F897EE /* OutputAudioStreamer.m */,
+				07D03A6D19FA9C8C00F897EE /* OutputAudioStreamer.h */,
+				07D03A6E19FA9C8C00F897EE /* InputAudioStreamer.h */,
+				07D03A6F19FA9C8C00F897EE /* InputAudioStreamer.m */,
 				0738475E19FA64EE00AF9393 /* AppDelegate.h */,
 				0738475F19FA64EE00AF9393 /* AppDelegate.m */,
 				0738476119FA64EE00AF9393 /* ViewController.h */,
@@ -239,7 +249,9 @@
 			files = (
 				0738476319FA64EE00AF9393 /* ViewController.m in Sources */,
 				0738478419FA738700AF9393 /* Multipeer.m in Sources */,
+				07D03A7019FA9C8C00F897EE /* OutputAudioStreamer.m in Sources */,
 				0738476019FA64EE00AF9393 /* AppDelegate.m in Sources */,
+				07D03A7119FA9C8C00F897EE /* InputAudioStreamer.m in Sources */,
 				0738475D19FA64EE00AF9393 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
