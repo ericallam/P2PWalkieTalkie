@@ -9,10 +9,9 @@
 #import "AppDelegate.h"
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-static NSString * const XXServiceType = @"com.CmdR.WalkieTalkie";
+NSString * const XXServiceType = @"comcmdr-wt";
 
 @interface AppDelegate () <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate>
-@property (strong, nonatomic) MCPeerID *localPeerID;
 @property (strong, atomic) NSMutableArray *mutableBlockedPeers;
 @end
 
@@ -20,60 +19,14 @@ static NSString * const XXServiceType = @"com.CmdR.WalkieTalkie";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
-    self.localPeerID = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
-    
-    MCNearbyServiceAdvertiser *advertiser =
-    [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.localPeerID
-                                      discoveryInfo:nil
-                                        serviceType:XXServiceType];
-    advertiser.delegate = self;
-    [advertiser startAdvertisingPeer];
+    self.multipeer = [Multipeer new];
+    [self.multipeer startAdvertising];
     
     return YES;
 }
 
-- (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser
-didReceiveInvitationFromPeer:(MCPeerID *)peerID
-       withContext:(NSData *)context
- invitationHandler:(void(^)(BOOL accept, MCSession *session))invitationHandler
-{
-    if ([self.mutableBlockedPeers containsObject:peerID]) {
-        invitationHandler(NO, nil);
-        return;
-    }
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Received Invitation from %@", @"Received Invitation from {Peer}"), peerID.displayName] message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Reject", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-       
-        invitationHandler(NO, nil);
-    }]];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Block", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-       
-        [self.mutableBlockedPeers addObject:peerID];
-        
-        invitationHandler(NO, nil);
-    }]];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Accept", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        MCSession *session = [[MCSession alloc] initWithPeer:self.localPeerID
-                                            securityIdentity:nil
-                                        encryptionPreference:MCEncryptionRequired];
-        session.delegate = self;
-        
-        invitationHandler(YES, session);
-    }]];
-    
-    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
-}
 
-- (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
-{
-    
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
