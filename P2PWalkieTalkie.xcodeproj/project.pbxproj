@@ -16,6 +16,7 @@
 		0738477719FA64EE00AF9393 /* P2PWalkieTalkieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738477619FA64EE00AF9393 /* P2PWalkieTalkieTests.m */; };
 		0738478119FA665500AF9393 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0738478019FA665500AF9393 /* MultipeerConnectivity.framework */; };
 		0738478419FA738700AF9393 /* Multipeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738478319FA738700AF9393 /* Multipeer.m */; };
+		AFD224DD19FA6D6300C3D15E /* Release.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD224DC19FA6D6300C3D15E /* Release.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		0738477619FA64EE00AF9393 /* P2PWalkieTalkieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P2PWalkieTalkieTests.m; sourceTree = "<group>"; };
 		0738478019FA665500AF9393 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		0738478219FA738700AF9393 /* Multipeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Multipeer.h; sourceTree = "<group>"; };
+		AFD224DC19FA6D6300C3D15E /* Release.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Release.storyboard; sourceTree = "<group>"; };
 		0738478319FA738700AF9393 /* Multipeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Multipeer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				0738476119FA64EE00AF9393 /* ViewController.h */,
 				0738476219FA64EE00AF9393 /* ViewController.m */,
 				0738476419FA64EE00AF9393 /* Main.storyboard */,
+				AFD224DC19FA6D6300C3D15E /* Release.storyboard */,
 				0738476719FA64EE00AF9393 /* Images.xcassets */,
 				0738476919FA64EE00AF9393 /* LaunchScreen.xib */,
 				0738475A19FA64EE00AF9393 /* Supporting Files */,
@@ -219,6 +222,7 @@
 			files = (
 				0738476619FA64EE00AF9393 /* Main.storyboard in Resources */,
 				0738476B19FA64EE00AF9393 /* LaunchScreen.xib in Resources */,
+				AFD224DD19FA6D6300C3D15E /* Release.storyboard in Resources */,
 				0738476819FA64EE00AF9393 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
