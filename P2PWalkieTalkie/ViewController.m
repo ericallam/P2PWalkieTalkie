@@ -25,8 +25,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)findNearby:(id)sender {
-    [self.multipeer findNearbyFromViewController:self];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"pushMCBrowser"]) {
+  }
 }
 
 @end
