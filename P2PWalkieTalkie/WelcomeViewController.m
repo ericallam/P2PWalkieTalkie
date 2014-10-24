@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Eric Allam. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "WelcomeViewController.h"
 #import "AppDelegate.h"
 
-@interface ViewController ()
+@interface WelcomeViewController ()
 
 @end
 
-@implementation ViewController
+@implementation WelcomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
