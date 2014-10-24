@@ -8,20 +8,15 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
-#import "Multipeer.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) Multipeer *multipeer;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    AppDelegate *appDel = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    self.multipeer = appDel.multipeer;
     // Do any additional setup after loading the view, typically from a nib.
 }
 

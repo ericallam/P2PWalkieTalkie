@@ -15,7 +15,7 @@
 		0738476B19FA64EE00AF9393 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0738476919FA64EE00AF9393 /* LaunchScreen.xib */; };
 		0738477719FA64EE00AF9393 /* P2PWalkieTalkieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738477619FA64EE00AF9393 /* P2PWalkieTalkieTests.m */; };
 		0738478119FA665500AF9393 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0738478019FA665500AF9393 /* MultipeerConnectivity.framework */; };
-		0738478419FA738700AF9393 /* Multipeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738478319FA738700AF9393 /* Multipeer.m */; };
+		0738478419FA738700AF9393 /* MultipeerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738478319FA738700AF9393 /* MultipeerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,8 @@
 		0738477519FA64EE00AF9393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0738477619FA64EE00AF9393 /* P2PWalkieTalkieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P2PWalkieTalkieTests.m; sourceTree = "<group>"; };
 		0738478019FA665500AF9393 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
-		0738478219FA738700AF9393 /* Multipeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Multipeer.h; sourceTree = "<group>"; };
-		0738478319FA738700AF9393 /* Multipeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Multipeer.m; sourceTree = "<group>"; };
+		0738478219FA738700AF9393 /* MultipeerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerManager.h; sourceTree = "<group>"; };
+		0738478319FA738700AF9393 /* MultipeerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +96,8 @@
 				0738476719FA64EE00AF9393 /* Images.xcassets */,
 				0738476919FA64EE00AF9393 /* LaunchScreen.xib */,
 				0738475A19FA64EE00AF9393 /* Supporting Files */,
-				0738478219FA738700AF9393 /* Multipeer.h */,
-				0738478319FA738700AF9393 /* Multipeer.m */,
+				0738478219FA738700AF9393 /* MultipeerManager.h */,
+				0738478319FA738700AF9393 /* MultipeerManager.m */,
 			);
 			path = P2PWalkieTalkie;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0738476319FA64EE00AF9393 /* ViewController.m in Sources */,
-				0738478419FA738700AF9393 /* Multipeer.m in Sources */,
+				0738478419FA738700AF9393 /* MultipeerManager.m in Sources */,
 				0738476019FA64EE00AF9393 /* AppDelegate.m in Sources */,
 				0738475D19FA64EE00AF9393 /* main.m in Sources */,
 			);
