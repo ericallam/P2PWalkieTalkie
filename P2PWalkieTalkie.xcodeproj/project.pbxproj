@@ -66,9 +66,9 @@
 		0738474E19FA64EE00AF9393 = {
 			isa = PBXGroup;
 			children = (
-				0738478019FA665500AF9393 /* MultipeerConnectivity.framework */,
 				0738475919FA64EE00AF9393 /* P2PWalkieTalkie */,
 				0738477319FA64EE00AF9393 /* P2PWalkieTalkieTests */,
+				AFD224D919FA6B8300C3D15E /* Frameworks */,
 				0738475819FA64EE00AF9393 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +121,14 @@
 				0738477519FA64EE00AF9393 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AFD224D919FA6B8300C3D15E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0738478019FA665500AF9393 /* MultipeerConnectivity.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +424,7 @@
 				0738477C19FA64EE00AF9393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0738477D19FA64EE00AF9393 /* Build configuration list for PBXNativeTarget "P2PWalkieTalkieTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +433,7 @@
 				0738477F19FA64EE00AF9393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
