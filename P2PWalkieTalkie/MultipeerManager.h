@@ -10,13 +10,20 @@
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
 @protocol MultipeerDelegate <NSObject>
+
 @end
 
-@interface Multipeer : NSObject
-- (void)findNearbyFromViewController:(UIViewController *)controller;
+
+@interface MultipeerManager : NSObject
 
 @property (readonly) MCPeerID *localPeerID;
 @property (weak, nonatomic) id<MultipeerDelegate> delegate;
+@property (readonly, nonatomic) MCSession *session;
+
++ (instancetype)sharedManager;
+//- (void)startAdvertising;
+//- (void)stopAdvertising;
+
 @end
 
 FOUNDATION_EXPORT NSString *MultipeerServiceType;

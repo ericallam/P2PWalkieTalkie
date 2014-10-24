@@ -9,14 +9,12 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-@property (strong, atomic) NSMutableArray *mutableBlockedPeers;
+
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    self.multipeer = [Multipeer new];
     
     return YES;
 }

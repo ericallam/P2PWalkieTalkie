@@ -6,20 +6,30 @@
 //  Copyright (c) 2014 Eric Allam. All rights reserved.
 //
 
-#import "Multipeer.h"
+#import "MultipeerManager.h"
 #import "AppDelegate.h"
 
 NSString *MultipeerServiceType = @"comcmdr-wt";
 
-@interface Multipeer () <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCBrowserViewControllerDelegate>
+@interface MultipeerManager () <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCBrowserViewControllerDelegate>
 
 @property (strong, nonatomic) MCPeerID *localPeerID;
 @property (strong, nonatomic) MCAdvertiserAssistant *advertiserAssistant;
 @property (strong, atomic) NSMutableArray *mutableBlockedPeers;
 @property (strong, nonatomic) MCSession *session;
+
 @end
 
-@implementation Multipeer
+@implementation MultipeerManager
+
++ (instancetype)sharedManager {
+    static dispatch_once_t onceToken;
+    static MultipeerManager *manager;
+    dispatch_once(&onceToken, ^{
+        manager = [[self alloc] init];
+    });
+    return manager;
+}
 
 - (instancetype)init
 {
@@ -43,17 +53,6 @@ NSString *MultipeerServiceType = @"comcmdr-wt";
 {
     [_advertiserAssistant stop];
     [_session disconnect];
-}
-
-- (void)findNearbyFromViewController:(UIViewController *)controller
-{
-    MCBrowserViewController *browserViewController =
-    [[MCBrowserViewController alloc] initWithServiceType:MultipeerServiceType session:self.session];
-    browserViewController.delegate = self;
-    
-    [controller presentViewController:browserViewController
-                       animated:YES
-                     completion:nil];
 }
 
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser

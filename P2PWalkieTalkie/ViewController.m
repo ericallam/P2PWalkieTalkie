@@ -8,20 +8,15 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
-#import "Multipeer.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) Multipeer *multipeer;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    AppDelegate *appDel = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    self.multipeer = appDel.multipeer;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -30,8 +25,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)findNearby:(id)sender {
-    [self.multipeer findNearbyFromViewController:self];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"pushMCBrowser"]) {
+  }
 }
 
 @end

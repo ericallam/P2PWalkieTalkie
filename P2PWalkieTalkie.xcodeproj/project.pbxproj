@@ -15,8 +15,9 @@
 		0738476B19FA64EE00AF9393 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0738476919FA64EE00AF9393 /* LaunchScreen.xib */; };
 		0738477719FA64EE00AF9393 /* P2PWalkieTalkieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738477619FA64EE00AF9393 /* P2PWalkieTalkieTests.m */; };
 		0738478119FA665500AF9393 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0738478019FA665500AF9393 /* MultipeerConnectivity.framework */; };
-		0738478419FA738700AF9393 /* Multipeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738478319FA738700AF9393 /* Multipeer.m */; };
 		07D03A7019FA9C8C00F897EE /* OutputAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D03A6C19FA9C8C00F897EE /* OutputAudioStreamer.m */; };
+		0738478419FA738700AF9393 /* MultipeerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738478319FA738700AF9393 /* MultipeerManager.m */; };
+		AFD224E319FA922900C3D15E /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD224E219FA922900C3D15E /* BrowserViewController.m */; };
 		07D03A7119FA9C8C00F897EE /* InputAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D03A6F19FA9C8C00F897EE /* InputAudioStreamer.m */; };
 /* End PBXBuildFile section */
 
@@ -45,11 +46,13 @@
 		0738477519FA64EE00AF9393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0738477619FA64EE00AF9393 /* P2PWalkieTalkieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P2PWalkieTalkieTests.m; sourceTree = "<group>"; };
 		0738478019FA665500AF9393 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
-		0738478219FA738700AF9393 /* Multipeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Multipeer.h; sourceTree = "<group>"; };
-		0738478319FA738700AF9393 /* Multipeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Multipeer.m; sourceTree = "<group>"; };
+		0738478219FA738700AF9393 /* MultipeerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerManager.h; sourceTree = "<group>"; };
+		0738478319FA738700AF9393 /* MultipeerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerManager.m; sourceTree = "<group>"; };
 		07D03A6C19FA9C8C00F897EE /* OutputAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputAudioStreamer.m; sourceTree = "<group>"; };
 		07D03A6D19FA9C8C00F897EE /* OutputAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputAudioStreamer.h; sourceTree = "<group>"; };
 		07D03A6E19FA9C8C00F897EE /* InputAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputAudioStreamer.h; sourceTree = "<group>"; };
+		AFD224E119FA922900C3D15E /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
+		AFD224E219FA922900C3D15E /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
 		07D03A6F19FA9C8C00F897EE /* InputAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputAudioStreamer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,12 +105,14 @@
 				0738475F19FA64EE00AF9393 /* AppDelegate.m */,
 				0738476119FA64EE00AF9393 /* ViewController.h */,
 				0738476219FA64EE00AF9393 /* ViewController.m */,
+				AFD224E119FA922900C3D15E /* BrowserViewController.h */,
+				AFD224E219FA922900C3D15E /* BrowserViewController.m */,
 				0738476419FA64EE00AF9393 /* Main.storyboard */,
 				0738476719FA64EE00AF9393 /* Images.xcassets */,
 				0738476919FA64EE00AF9393 /* LaunchScreen.xib */,
 				0738475A19FA64EE00AF9393 /* Supporting Files */,
-				0738478219FA738700AF9393 /* Multipeer.h */,
-				0738478319FA738700AF9393 /* Multipeer.m */,
+				0738478219FA738700AF9393 /* MultipeerManager.h */,
+				0738478319FA738700AF9393 /* MultipeerManager.m */,
 			);
 			path = P2PWalkieTalkie;
 			sourceTree = "<group>";
@@ -248,8 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0738476319FA64EE00AF9393 /* ViewController.m in Sources */,
-				0738478419FA738700AF9393 /* Multipeer.m in Sources */,
 				07D03A7019FA9C8C00F897EE /* OutputAudioStreamer.m in Sources */,
+				0738478419FA738700AF9393 /* MultipeerManager.m in Sources */,
+				AFD224E319FA922900C3D15E /* BrowserViewController.m in Sources */,
 				0738476019FA64EE00AF9393 /* AppDelegate.m in Sources */,
 				07D03A7119FA9C8C00F897EE /* InputAudioStreamer.m in Sources */,
 				0738475D19FA64EE00AF9393 /* main.m in Sources */,
