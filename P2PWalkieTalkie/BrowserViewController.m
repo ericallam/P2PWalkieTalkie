@@ -22,7 +22,12 @@
     [super viewDidLoad];
     MultipeerManager *manager = [MultipeerManager sharedManager];
     self.browserVC = [[MCBrowserViewController alloc]initWithServiceType:MultipeerServiceType session:manager.session];
-    self.browserVC.view.frame = self.view.frame;
+    CGRect browserFrame = self.view.frame;
+    if (self.navigationController) {
+        browserFrame.origin.y += 64;
+        browserFrame.size.height -= 64;
+    }
+    self.browserVC.view.frame = browserFrame;
     [self.view addSubview:self.browserVC.view];
     // Do any additional setup after loading the view.
 }
